@@ -7,7 +7,7 @@
         
         <!-- Favicon -->
         <link rel="icon" type="image/svg+xml" href="favicon.svg">
-
+        
         <!-- Primary Meta Tags -->
         <meta name="title" content="Alessandro Persiano - Creative Software Engineer">
         <meta name="description" content="Creative Software and Product Engineer based in Milan. GDG Milano Organizer passionate about building digital products and experimenting with technologies.">
@@ -134,7 +134,7 @@
             typewriter
                 .typeString('Hey! 👋<br>')
                 .pauseFor(300)
-                .typeString("I'm <span class='highlight'>Alessandro</span> aka <span class='highlight'>appersiano</span>")
+                .typeString("I'm <span class='highlight'>Alessandro</span>")
                 .pauseFor(300)
                 .typeString(' and I am a <br>')
                 .pauseFor(200)
@@ -173,11 +173,37 @@
                 }
 
                 document.getElementById(tabName).classList.add('active');
-                evt.currentTarget.classList.add('active');
+                if (evt) {
+                    evt.currentTarget.classList.add('active');
+                    // Update URL hash without scrolling
+                    history.pushState(null, null, `#${tabName}`);
+                }
+            }
+
+            // Handle direct navigation via URL hash
+            function handleHashNavigation() {
+                const hash = window.location.hash.slice(1); // Remove the # symbol
+                if (hash) {
+                    const validTabs = ['experiments', 'blog', 'talks', 'community'];
+                    if (validTabs.includes(hash)) {
+                        // Find the tab button
+                        const tabButton = document.querySelector(`.tab[onclick="openTab(event, '${hash}')"]`);
+                        if (tabButton) {
+                            // Simulate click on the tab
+                            openTab({ currentTarget: tabButton }, hash);
+                        }
+                    }
+                }
             }
 
             // Initialize the sections when the page loads
-            document.addEventListener('DOMContentLoaded', initializeSections);
+            document.addEventListener('DOMContentLoaded', () => {
+                initializeSections();
+                handleHashNavigation(); // Handle initial hash if present
+            });
+
+            // Listen for hash changes
+            window.addEventListener('hashchange', handleHashNavigation);
 
             // Theme toggle functionality
             const themeToggle = document.querySelector('.theme-toggle');
