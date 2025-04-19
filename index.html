@@ -1,1 +1,195 @@
-Hello world
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Alessandro Persiano - Creative Software Engineer</title>
+        
+        <!-- Primary Meta Tags -->
+        <meta name="title" content="Alessandro Persiano - Creative Software Engineer">
+        <meta name="description" content="Creative Software and Product Engineer based in Milan. GDG Milano Organizer passionate about building digital products and experimenting with technologies.">
+        
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://appersiano.github.io/">
+        <meta property="og:title" content="Alessandro Persiano - Creative Software Engineer">
+        <meta property="og:description" content="Creative Software and Product Engineer based in Milan. GDG Milano Organizer passionate about building digital products and experimenting with technologies.">
+        <meta property="og:image" content="https://avatars.githubusercontent.com/appersiano">
+        
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="twitter:url" content="https://appersiano.github.io/">
+        <meta property="twitter:title" content="Alessandro Persiano - Creative Software Engineer">
+        <meta property="twitter:description" content="Creative Software and Product Engineer based in Milan. GDG Milano Organizer passionate about building digital products and experimenting with technologies.">
+        <meta property="twitter:image" content="https://avatars.githubusercontent.com/appersiano">
+
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
+        <button class="theme-toggle" aria-label="Toggle dark mode">
+            <i class="fas fa-moon"></i>
+        </button>
+        <div class="content">
+            <img src="https://avatars.githubusercontent.com/appersiano" alt="Alessandro's Avatar" class="avatar" onclick="handleAvatarClick(event)">
+            <div id="typewriter"></div>
+            <div class="social-links">
+                <a href="https://github.com/appersiano" target="_blank" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://linkedin.com/in/alessandro-persiano" target="_blank" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://medium.com/@appersiano" target="_blank" title="Medium">
+                    <i class="fab fa-medium"></i>
+                </a>
+            </div>
+            <div class="sections">
+                <div class="tabs">
+                    <button class="tab active" onclick="openTab(event, 'experiments')">🧪 Experiments</button>
+                    <button class="tab" onclick="openTab(event, 'blog')">✍️ Blog Posts</button>
+                    <button class="tab" onclick="openTab(event, 'talks')">🎤 Talks</button>
+                    <button class="tab" onclick="openTab(event, 'community')">👥 Community</button>
+                </div>
+
+                <div id="experiments" class="section active"></div>
+                <div id="blog" class="section"></div>
+                <div id="talks" class="section"></div>
+                <div id="community" class="section"></div>
+            </div>
+        </div>
+
+        <!-- Include Typewriter.js -->
+        <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+        <script>
+            // Avatar click handler with vibration
+            function handleAvatarClick(event) {
+                // Prevent default behavior
+                event.preventDefault();
+
+                // Check if the Vibration API is supported
+                if ('vibrate' in navigator) {
+                    // Vibrate for 50ms
+                    navigator.vibrate(50);
+                }
+
+                // Add a small animation class
+                const avatar = event.target;
+                avatar.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    avatar.style.transform = '';
+                }, 150);
+            }
+
+            // Load section data
+            async function loadSectionData(section) {
+                try {
+                    const response = await fetch(`data/${section}.json`);
+                    const data = await response.json();
+                    return data.items;
+                } catch (error) {
+                    console.error(`Error loading ${section} data:`, error);
+                    return [];
+                }
+            }
+
+            // Create card HTML
+            function createCardHTML(item) {
+                return `
+                    <div class="item">
+                        <a href="${item.link}" target="_blank">
+                            <h3>${item.title}</h3>
+                            <p>${item.description}</p>
+                            <div class="tags">
+                                ${item.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                            </div>
+                        </a>
+                    </div>
+                `;
+            }
+
+            // Initialize sections
+            async function initializeSections() {
+                const sections = ['experiments', 'blog', 'talks', 'community'];
+                
+                for (const section of sections) {
+                    const items = await loadSectionData(section);
+                    const sectionElement = document.getElementById(section);
+                    sectionElement.innerHTML = items.map(createCardHTML).join('');
+                }
+            }
+
+            // Initialize Typewriter
+            const typewriter = new Typewriter('#typewriter', {
+                loop: false,
+                delay: 50,
+                cursor: '▋'
+            });
+
+            // Start the typewriter effect
+            typewriter
+                .typeString('Hey! 👋<br>')
+                .pauseFor(500)
+                .typeString("I'm <span class='highlight'>Alessandro</span>")
+                .pauseFor(500)
+                .typeString(' and I am a <br>')
+                .pauseFor(300)
+                .typeString('<span class="highlight">Creative Software and Product Engineer</span>')
+                .typeString(' based in Milan 🇮🇹.<br><br>')
+                .pauseFor(500)
+                .typeString('I love to create digital products and experiment with technologies.')
+                .pauseFor(300)
+                .typeString('<br>I\'m also passionate about <span class="highlight">community building</span> as an Organizer of GDG Milano.')
+                .callFunction(() => {
+                    document.querySelector('.social-links').classList.add('visible');
+                    setTimeout(() => {
+                        document.querySelector('.sections').classList.add('visible');
+                    }, 500);
+                })
+                .start();
+
+            // Tab functionality
+            function openTab(evt, tabName) {
+                const sections = document.getElementsByClassName('section');
+                for (let section of sections) {
+                    section.classList.remove('active');
+                }
+
+                const tabs = document.getElementsByClassName('tab');
+                for (let tab of tabs) {
+                    tab.classList.remove('active');
+                }
+
+                document.getElementById(tabName).classList.add('active');
+                evt.currentTarget.classList.add('active');
+            }
+
+            // Initialize the sections when the page loads
+            document.addEventListener('DOMContentLoaded', initializeSections);
+
+            // Theme toggle functionality
+            const themeToggle = document.querySelector('.theme-toggle');
+            const html = document.documentElement;
+            const themeIcon = themeToggle.querySelector('i');
+
+            // Check for saved theme preference
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            html.setAttribute('data-theme', savedTheme);
+            updateThemeIcon(savedTheme);
+
+            themeToggle.addEventListener('click', () => {
+                const currentTheme = html.getAttribute('data-theme');
+                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+                
+                html.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                updateThemeIcon(newTheme);
+            });
+
+            function updateThemeIcon(theme) {
+                themeIcon.className = theme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,10 @@
+{
+    "items": [
+        {
+            "title": "Building Scalable Mobile Architecture",
+            "description": "A deep dive into modern mobile architecture patterns and best practices",
+            "link": "https://medium.com/@appersiano/your-post",
+            "tags": ["Architecture", "Mobile", "Best Practices"]
+        }
+    ]
+}

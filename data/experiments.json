@@ -1,0 +1,10 @@
+{
+    "items": [
+        {
+            "title": "AR Navigation Assistant",
+            "description": "An experimental AR navigation system using ARCore for indoor wayfinding",
+            "link": "https://github.com/appersiano/your-experiment",
+            "tags": ["Android", "ARCore", "Kotlin"]
+        }
+    ]
+}
