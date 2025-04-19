@@ -123,29 +123,37 @@
             // Initialize Typewriter
             const typewriter = new Typewriter('#typewriter', {
                 loop: false,
-                delay: 50,
+                delay: 25,
                 cursor: '▋'
             });
 
-            // Start the typewriter effect
+            // Start the typewriter effect for introduction only
             typewriter
                 .typeString('Hey! 👋<br>')
-                .pauseFor(500)
+                .pauseFor(300)
                 .typeString("I'm <span class='highlight'>Alessandro</span>")
-                .pauseFor(500)
+                .pauseFor(300)
                 .typeString(' and I am a <br>')
-                .pauseFor(300)
+                .pauseFor(200)
                 .typeString('<span class="highlight">Creative Software and Product Engineer</span>')
-                .typeString(' based in Milan 🇮🇹.<br><br>')
-                .pauseFor(500)
-                .typeString('I love to create digital products and experiment with technologies.')
-                .pauseFor(300)
-                .typeString('<br>I\'m also passionate about <span class="highlight">community building</span> as an Organizer of GDG Milano.')
+                .typeString(' based in Milan 🇮🇹.')
                 .callFunction(() => {
+                    // Add the remaining text directly with fade-in effect
+                    const additionalText = document.createElement('div');
+                    additionalText.className = 'fade-in';
+                    additionalText.innerHTML = `
+                        <br><br>
+                        I love to create digital products and experiment with technologies.
+                        <br>
+                        I'm also passionate about <span class="highlight">community building</span> as an Organizer of GDG Milano.
+                    `;
+                    document.getElementById('typewriter').appendChild(additionalText);
+                    
+                    // Show social links and sections
                     document.querySelector('.social-links').classList.add('visible');
                     setTimeout(() => {
                         document.querySelector('.sections').classList.add('visible');
-                    }, 500);
+                    }, 300);
                 })
                 .start();
 
