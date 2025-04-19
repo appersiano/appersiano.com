@@ -1,10 +1,16 @@
 {
     "items": [
         {
-            "title": "The Future of Mobile Development",
-            "description": "Droidcon Italy 2023 - Exploring emerging trends and technologies in mobile development",
-            "link": "#",
-            "tags": ["Conference", "Mobile", "Innovation"]
+            "title": "Epic Failures: lessons learned from developers",
+            "description": "Nel mondo dello sviluppo software, non tutto va sempre come previsto. Ogni developer ha almeno una storia di disastri in codice o progetti che hanno preso una piega inaspettata.",
+            "link": "https://conferences.codemotion.com/milan2024/agenda/",
+            "tags": ["Community", "Ispirational", "Dev Life", "Career"]
+        },
+        {
+            "title": "Da Arduino ad Android, illumina il Natale con il BLE.",
+            "description": "🎄 Crea le tue luci di Natale con Arduino e comandale via Bluetooth con la tua App Android. 📱",
+            "link": "https://gdg.community.dev/events/details/google-gdg-milano-presents-da-arduino-ad-android-illumina-il-natale-con-il-ble/",
+            "tags": ["Android", "Bluetooth", "BLE", "Arduino", "LED"]
         }
     ]
 }

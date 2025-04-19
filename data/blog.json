@@ -1,10 +1,22 @@
 {
     "items": [
         {
-            "title": "Building Scalable Mobile Architecture",
+            "title": "💥 Disaster Corner 💥 — Turning Developer Fails into Conference Wins (v0.1)",
+            "description": "Event format for Conferences with the goal is to showcase the human side of development by collecting stories of mishaps from developers’ careers.",
+            "link": "https://medium.com/@appersiano/disaster-corner-turning-developer-fails-into-conference-wins-v0-1-7622ed86c44c",
+            "tags": ["Community", "Conference", "Engagement"]
+        },
+        {
+            "title": "From Zero to Product : Smart Baby Sleep Led Bar Light",
             "description": "A deep dive into modern mobile architecture patterns and best practices",
-            "link": "https://medium.com/@appersiano/your-post",
-            "tags": ["Architecture", "Mobile", "Best Practices"]
+            "link": "https://appersiano.medium.com/from-zero-to-product-smart-baby-sleep-led-bar-light-207164173c61",
+            "tags": ["Product Engineering", "Bluetooth Low Energy", "Hardware", "Arduino"]
+        },
+        {
+            "title": "Performance vs Trust, from the idea to the reality",
+            "description": "How to create high performance team like Navy Seals",
+            "link": "https://medium.com/@appersiano/performance-vs-trust-from-the-idea-to-the-reality-ba49b05d6f5f",
+            "tags": ["Team Management", "Ispirational", "Career"]
         }
     ]
 }

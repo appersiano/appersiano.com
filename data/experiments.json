@@ -1,10 +1,34 @@
 {
     "items": [
         {
-            "title": "AR Navigation Assistant",
-            "description": "An experimental AR navigation system using ARCore for indoor wayfinding",
-            "link": "https://github.com/appersiano/your-experiment",
-            "tags": ["Android", "ARCore", "Kotlin"]
+            "title": "RemoteTogether.io",
+            "description": "RemoteTogether.io helps remote workers connect and co-work in real life. Work from cafés, coworking spaces, or pop-up offices, meet people and feel inspired.",
+            "link": "https://remotetogether.io/",
+            "tags": ["Product Engineering", "Kotlin", "Ktor", "HTML", "Javascript", "Bootstrap CSS"]
+        },
+        {
+            "title": "WebNFCVcard",
+            "description": "📇 WebNFCVCard – A web-based tool to write and share vCards via NFC, making contact exchange seamless at events!",
+            "link": "https://github.com/appersiano/WebNFCVcard",
+            "tags": ["Web NFC API", "Javascript", "HTML", "vCard"]
+        },
+        {
+            "title": "Smart Baby Sleep Led Bar Light",
+            "description": "A smart baby sleep LED Bar light customizable via BLE",
+            "link": "https://medium.com/@appersiano/from-zero-to-product-smart-baby-sleep-led-bar-light-207164173c61",
+            "tags": ["Product Engineering", "Baby Tech", "LED", "Arduino", "Mobile App", "Android"]
+        },
+        {
+            "title": "Android POC: Retrieve the contacts list via SMS from any phone.",
+            "description": "POC Android application that enables users to remotely retrieve contact information from their own device via SMS.",
+            "link": "https://medium.com/@appersiano/android-poc-retrieve-the-contacts-list-via-sms-from-any-phone-4a740985095a",
+            "tags": ["Android", "SMS", "Contacts", "Remote Access", "Proof of Concept"]
+        },
+        {
+            "title": "Fixed rotation image, an Android sensors experiment",
+            "description": "How to utilize Android’s accelerometer data to stabilize on-screen images, regardless of device orientation",
+            "link": "https://medium.com/@appersiano/fixed-rotation-image-an-android-sensors-experiment-73e9c0843e6f",
+            "tags": ["Android", "Sensors", "Accelerometer", "Kotlin"]
         }
     ]
 }
