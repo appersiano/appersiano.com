@@ -63,6 +63,9 @@
             </div>
         </div>
 
+        <!-- Include GraphemeSplitter.js -->
+        <script src="https://unpkg.com/grapheme-splitter@1.0.4/index.js"></script>
+
         <!-- Include Typewriter.js -->
         <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
         <script>
@@ -123,11 +126,17 @@
                 }
             }
 
+            const stringSplitter = string => {
+                const splitter = new GraphemeSplitter();
+                return splitter.splitGraphemes(string);
+            };
+
             // Initialize Typewriter
             const typewriter = new Typewriter('#typewriter', {
                 loop: false,
                 delay: 25,
-                cursor: '▋'
+                cursor: '▋',
+                stringSplitter
             });
 
             // Start the typewriter effect for introduction only
