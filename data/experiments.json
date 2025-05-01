@@ -1,6 +1,12 @@
 {
     "items": [
         {
+            "title": "Lettere Morali da Seneca Newsletter",
+            "description": "Una newsletter che ogni lunedì ti manda una lettea di Seneca tradotto dal latino con l'AI, in calce viene anche generato una spiegazione semplice dei concetti dell'epistola.",
+            "link": "https://stoicbase.com/products/lettere-morali-da-seneca",
+            "tags": ["Product Engineering", "AI", "Newsletter", "Stoicism", "Charity"]
+        },
+        {
             "title": "RemoteTogether.io",
             "description": "RemoteTogether.io helps remote workers connect and co-work in real life. Work from cafés, coworking spaces, or pop-up offices, meet people and feel inspired.",
             "link": "https://remotetogether.io/",
