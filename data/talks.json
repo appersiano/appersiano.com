@@ -1,5 +1,11 @@
 {
     "items": [
+         {
+            "title": "Organizzare eventi senza perdere amici, sonno e sanità mentale - TechCommunityDay.it",
+            "description": "Organizzare eventi e meetup sempre semplice ma non lo è. Idee e strumenti utili per prevenire burnout per sopravvivere al ruolo di Community Organizer",
+            "link": "https://docs.google.com/presentation/d/1MqOuaoqk5hHN7Xw8u8N3D7BDSo0gKnf1H-xv5HOnEt8/edit?usp=sharing",
+            "tags": ["TechCommunityDay.it", "Community Building", "Community Organizer Life"]
+        },
         {
             "title": "Epic Failures: lessons learned from developers",
             "description": "Nel mondo dello sviluppo software, non tutto va sempre come previsto. Ogni developer ha almeno una storia di disastri in codice o progetti che hanno preso una piega inaspettata.",
