@@ -1,6 +1,18 @@
 {
     "items": [
         {
+            "title": "DevFest Milano 2025 Organizer",
+            "description": "Led the 2025 edition of DevFest Milano, focusing on innovation, accessibility, and human-centered technology through engaging sessions and workshops.",
+            "link": "https://gdg.community.dev/events/details/google-gdg-milano-presents-devfest-milano-2025/",
+            "tags": ["DevFest", "Tech Conferences", "Community Building"]
+        },
+         {
+            "title": "DevFest Milano 2024 Organizer",
+            "description": "Co-organized one of the largest tech events in Northern Italy, featuring top speakers, hands-on workshops, and inclusive community experiences.",
+            "link": "https://gdg.community.dev/events/details/google-gdg-milano-presents-devfest-milano-2024-1/",
+            "tags": ["DevFest", "Event Organization", "Community Leadership"]
+        },
+        {
             "title": "GDG Milano Organizer",
             "description": "Passionate about building and nurturing the tech community in Milan through events, workshops, and knowledge sharing since 2023",
             "link": "https://gdg.community.dev/gdg-milano/",
