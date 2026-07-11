@@ -2,39 +2,45 @@
     "items": [
         {
             "title": "Lettere Morali da Seneca Newsletter",
-            "description": "Una newsletter che ogni lunedì ti manda una lettea di Seneca tradotto dal latino con l'AI, in calce viene anche generato una spiegazione semplice dei concetti dell'epistola.",
+            "description": "Una newsletter che ogni lunedì ti manda una lettera di Seneca tradotta dal latino con l'AI, in calce viene anche generata una spiegazione semplice dei concetti dell'epistola.",
             "link": "https://stoicbase.com/products/lettere-morali-da-seneca",
-            "tags": ["Product Engineering", "AI", "Newsletter", "Stoicism", "Charity"]
+            "tags": ["Product Engineering", "AI", "Newsletter", "Stoicism", "Charity"],
+            "date": "2025-09"
         },
         {
             "title": "RemoteTogether.io",
             "description": "RemoteTogether.io helps remote workers connect and co-work in real life. Work from cafés, coworking spaces, or pop-up offices, meet people and feel inspired.",
             "link": "https://remotetogether.io/",
-            "tags": ["Product Engineering", "Kotlin", "Ktor", "HTML", "Javascript", "Bootstrap CSS"]
+            "tags": ["Product Engineering", "Kotlin", "Ktor", "HTML", "Javascript", "Bootstrap CSS"],
+            "date": "2024-08"
         },
         {
             "title": "WebNFCVcard",
             "description": "📇 WebNFCVCard – A web-based tool to write and share vCards via NFC, making contact exchange seamless at events!",
             "link": "https://github.com/appersiano/WebNFCVcard",
-            "tags": ["Web NFC API", "Javascript", "HTML", "vCard"]
+            "tags": ["Web NFC API", "Javascript", "HTML", "vCard"],
+            "date": "2024-05"
         },
         {
             "title": "Smart Baby Sleep Led Bar Light",
-            "description": "A smart baby sleep LED Bar light customizable via BLE",
+            "description": "A smart baby sleep LED bar light customizable via BLE, with Arduino firmware and a companion Android app.",
             "link": "https://medium.com/@appersiano/from-zero-to-product-smart-baby-sleep-led-bar-light-207164173c61",
-            "tags": ["Product Engineering", "Baby Tech", "LED", "Arduino", "Mobile App", "Android"]
+            "tags": ["Product Engineering", "Baby Tech", "LED", "Arduino", "Mobile App", "Android"],
+            "date": "2024-03"
         },
         {
             "title": "Android POC: Retrieve the contacts list via SMS from any phone.",
             "description": "POC Android application that enables users to remotely retrieve contact information from their own device via SMS.",
             "link": "https://medium.com/@appersiano/android-poc-retrieve-the-contacts-list-via-sms-from-any-phone-4a740985095a",
-            "tags": ["Android", "SMS", "Contacts", "Remote Access", "Proof of Concept"]
+            "tags": ["Android", "SMS", "Contacts", "Remote Access", "Proof of Concept"],
+            "date": "2023-09"
         },
         {
             "title": "Fixed rotation image, an Android sensors experiment",
-            "description": "How to utilize Android’s accelerometer data to stabilize on-screen images, regardless of device orientation",
+            "description": "How to utilize Android's accelerometer data to stabilize on-screen images, regardless of device orientation.",
             "link": "https://medium.com/@appersiano/fixed-rotation-image-an-android-sensors-experiment-73e9c0843e6f",
-            "tags": ["Android", "Sensors", "Accelerometer", "Kotlin"]
+            "tags": ["Android", "Sensors", "Accelerometer", "Kotlin"],
+            "date": "2023-06"
         }
     ]
 }

@@ -1,22 +1,25 @@
 {
     "items": [
-         {
+        {
             "title": "Organizzare eventi senza perdere amici, sonno e sanità mentale - TechCommunityDay.it",
-            "description": "Organizzare eventi e meetup sempre semplice ma non lo è. Idee e strumenti utili per prevenire burnout per sopravvivere al ruolo di Community Organizer",
+            "description": "Organizzare eventi e meetup sembra sempre semplice ma non lo è. Idee e strumenti utili per prevenire burnout e sopravvivere al ruolo di Community Organizer.",
             "link": "https://docs.google.com/presentation/d/1MqOuaoqk5hHN7Xw8u8N3D7BDSo0gKnf1H-xv5HOnEt8/edit?usp=sharing",
-            "tags": ["TechCommunityDay.it", "Community Building", "Community Organizer Life"]
+            "tags": ["TechCommunityDay.it", "Community Building", "Community Organizer Life"],
+            "date": "2025-05"
         },
         {
             "title": "Epic Failures: lessons learned from developers",
             "description": "Nel mondo dello sviluppo software, non tutto va sempre come previsto. Ogni developer ha almeno una storia di disastri in codice o progetti che hanno preso una piega inaspettata.",
             "link": "https://conferences.codemotion.com/milan2024/agenda/",
-            "tags": ["Community", "Ispirational", "Dev Life", "Career"]
+            "tags": ["Community", "Inspirational", "Dev Life", "Career"],
+            "date": "2024-11"
         },
         {
             "title": "Da Arduino ad Android, illumina il Natale con il BLE.",
             "description": "🎄 Crea le tue luci di Natale con Arduino e comandale via Bluetooth con la tua App Android. 📱",
             "link": "https://gdg.community.dev/events/details/google-gdg-milano-presents-da-arduino-ad-android-illumina-il-natale-con-il-ble/",
-            "tags": ["Android", "Bluetooth", "BLE", "Arduino", "LED"]
+            "tags": ["Android", "Bluetooth", "BLE", "Arduino", "LED"],
+            "date": "2023-12"
         }
     ]
 }
