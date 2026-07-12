@@ -2,21 +2,24 @@
     "items": [
         {
             "title": "💥 Disaster Corner 💥 — Turning Developer Fails into Conference Wins (v0.1)",
-            "description": "Event format for Conferences with the goal is to showcase the human side of development by collecting stories of mishaps from developers’ careers.",
+            "description": "Event format for conferences with the goal of showcasing the human side of development by collecting stories of mishaps from developers' careers.",
             "link": "https://medium.com/@appersiano/disaster-corner-turning-developer-fails-into-conference-wins-v0-1-7622ed86c44c",
-            "tags": ["Community", "Conference", "Engagement"]
+            "tags": ["Community", "Conference", "Engagement"],
+            "date": "2025-06"
         },
         {
             "title": "From Zero to Product : Smart Baby Sleep Led Bar Light",
-            "description": "A deep dive into modern mobile architecture patterns and best practices",
+            "description": "The full journey of building a smart baby sleep LED bar light — from Arduino firmware and BLE to a custom Android app.",
             "link": "https://appersiano.medium.com/from-zero-to-product-smart-baby-sleep-led-bar-light-207164173c61",
-            "tags": ["Product Engineering", "Bluetooth Low Energy", "Hardware", "Arduino"]
+            "tags": ["Product Engineering", "Bluetooth Low Energy", "Hardware", "Arduino"],
+            "date": "2024-03"
         },
         {
             "title": "Performance vs Trust, from the idea to the reality",
-            "description": "How to create high performance team like Navy Seals",
+            "description": "How to build high-performance teams rooted in trust — lessons inspired by Navy SEAL team dynamics.",
             "link": "https://medium.com/@appersiano/performance-vs-trust-from-the-idea-to-the-reality-ba49b05d6f5f",
-            "tags": ["Team Management", "Ispirational", "Career"]
+            "tags": ["Team Management", "Inspirational", "Career"],
+            "date": "2023-11"
         }
     ]
 }
