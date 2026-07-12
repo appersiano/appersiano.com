@@ -1,6 +1,13 @@
 {
     "items": [
         {
+            "title": "Stage Timer",
+            "description": "A clean, distraction-free countdown clock for speakers, moderators, and live events. Fullscreen display, color-coded phases, multiple saved timers, and runs in the background — free forever, no ads.",
+            "link": "https://play.google.com/store/apps/details?id=com.appersiano.stagetimer",
+            "tags": ["Product Engineering", "Android", "Kotlin", "Live Events", "Productivity"],
+            "date": "2025-07"
+        },
+        {
             "title": "Lettere Morali da Seneca Newsletter",
             "description": "Una newsletter che ogni lunedì ti manda una lettera di Seneca tradotta dal latino con l'AI, in calce viene anche generata una spiegazione semplice dei concetti dell'epistola.",
             "link": "https://stoicbase.com/products/lettere-morali-da-seneca",

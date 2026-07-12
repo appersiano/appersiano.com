@@ -284,7 +284,7 @@ function startTypewriter() {
                 <br><br>
                 I love to create digital products and experiment with technologies.
                 <br>
-                I'm also passionate about <span class="highlight">community building</span> as an Organizer of GDG Milano.
+                Currently building <span class="highlight">Stage Timer</span>, a fullscreen countdown app for speakers and live events.
             `;
             document.getElementById('typewriter').appendChild(additionalText);
         })
