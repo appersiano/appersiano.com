@@ -1,0 +1,31 @@
+{
+    "items": [
+        {
+            "title": "Stage Timer",
+            "client": "Prodotto proprio · Play Store",
+            "problem": "Speaker e organizer avevano bisogno di un countdown fullscreen, senza distrazioni, utilizzabile su qualsiasi telefono o tablet.",
+            "work": "Product engineering end-to-end: UX, architettura Android/Kotlin, release su Play Store. App gratuita, senza ads.",
+            "result": "Prodotto live usato in eventi e talk. Proof di shipping da idea a store.",
+            "link": "https://play.google.com/store/apps/details?id=com.appersiano.stagetimer",
+            "linkLabel": "Vedi su Play Store"
+        },
+        {
+            "title": "Smart Baby Sleep LED",
+            "client": "Prodotto hardware + app",
+            "problem": "Serviva una luce notte smart controllabile da mobile, con firmware e companion app.",
+            "work": "Dal firmware Arduino al BLE fino all'app Android: stack completo idea → prototipo → prodotto documentato.",
+            "result": "Sistema funzionante e case study pubblico sul percorso 0→1.",
+            "link": "https://appersiano.medium.com/from-zero-to-product-smart-baby-sleep-led-bar-light-207164173c61",
+            "linkLabel": "Leggi il case study"
+        },
+        {
+            "title": "RemoteTogether.io",
+            "client": "Web product",
+            "problem": "I remote worker volevano incontrarsi offline senza friction: cafè, coworking, pop-up office.",
+            "work": "Backend Kotlin/Ktor e frontend web per matching e organizzazione sessioni di co-working.",
+            "result": "Prodotto online con loop di connessione reale tra remote worker.",
+            "link": "https://remotetogether.io/",
+            "linkLabel": "Apri il sito"
+        }
+    ]
+}

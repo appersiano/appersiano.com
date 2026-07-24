@@ -1,0 +1,38 @@
+{
+    "items": [
+        {
+            "name": "Discovery",
+            "duration": "1–2 sessioni",
+            "summary": "Audit tecnico e di prodotto, priorità chiare, piano di delivery concreto.",
+            "includes": [
+                "Review codebase / architettura / roadmap",
+                "Risk e gap analysis",
+                "Piano actionable con next step"
+            ],
+            "fit": "Per chi deve decidere cosa fare prima di investire settimane di build."
+        },
+        {
+            "name": "MVP Sprint",
+            "duration": "Scope chiuso · settimane definite",
+            "summary": "Dal problema alla release: architettura, build, ship su store o ambiente interno.",
+            "includes": [
+                "Definizione scope e milestone",
+                "Implementazione Android / product engineering",
+                "Handoff documentato"
+            ],
+            "fit": "Per founder e team che devono uscire con un MVP reale, non un prototipo da slide.",
+            "featured": true
+        },
+        {
+            "name": "Fractional",
+            "duration": "Retainer mensile",
+            "summary": "Giorni dedicati ogni mese su product engineering, architettura e unblocking del team.",
+            "includes": [
+                "Ownership su feature e debiti tecnici critici",
+                "Pairing / review con il team",
+                "Priorità mensili condivise"
+            ],
+            "fit": "Per team che vogliono seniority senza assumere full-time."
+        }
+    ]
+}
