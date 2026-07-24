@@ -1,5 +1,5 @@
 /* Swap this to Cal.com / Calendly when available — single source for every CTA. */
-const BOOKING_URL = 'https://www.linkedin.com/in/alessandro-persiano';
+const BOOKING_URL = 'https://linkedin.com/in/alessandro-persiano';
 
 async function loadJSON(path) {
     const response = await fetch(path);
