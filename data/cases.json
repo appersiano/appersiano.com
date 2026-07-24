@@ -19,13 +19,13 @@
             "linkLabel": "Leggi il case study"
         },
         {
-            "title": "RemoteTogether.io",
-            "client": "Web product",
-            "problem": "I remote worker volevano incontrarsi offline senza friction: cafè, coworking, pop-up office.",
-            "work": "Backend Kotlin/Ktor e frontend web per matching e organizzazione sessioni di co-working.",
-            "result": "Prodotto online con loop di connessione reale tra remote worker.",
-            "link": "https://remotetogether.io/",
-            "linkLabel": "Apri il sito"
+            "title": "WebNFC VCard",
+            "client": "Tool web · eventi",
+            "problem": "A meetup e conference lo scambio contatti era lento: biglietti, QR sparsi, zero standard.",
+            "work": "Tool web per scrivere e condividere vCard via Web NFC API — dal prototipo al repo usabile sul campo.",
+            "result": "Demo funzionante per exchange contatti in contesto eventi.",
+            "link": "https://github.com/appersiano/WebNFCVcard",
+            "linkLabel": "Vedi su GitHub"
         }
     ]
 }

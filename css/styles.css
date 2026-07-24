@@ -471,6 +471,14 @@ main {
     font-style: italic;
 }
 
+.offer-cta {
+    margin-top: 0.5rem;
+    width: 100%;
+    text-align: center;
+    font-size: 0.95rem;
+    padding: 0.7rem 1rem;
+}
+
 .offer-badge {
     display: inline-block;
     margin: 0;

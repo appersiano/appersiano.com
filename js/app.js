@@ -1,3 +1,6 @@
+/* Swap this to Cal.com / Calendly when available — single source for every CTA. */
+const BOOKING_URL = 'https://www.linkedin.com/in/alessandro-persiano';
+
 async function loadJSON(path) {
     const response = await fetch(path);
     if (!response.ok) {
@@ -14,9 +17,25 @@ function formatMonthYear(dateStr) {
     return date.toLocaleDateString('it-IT', { month: 'short', year: 'numeric' });
 }
 
+function bookingUrl(intent) {
+    if (!intent) return BOOKING_URL;
+    return `${BOOKING_URL}?intent=${encodeURIComponent(intent)}`;
+}
+
+function wireBookingLinks(root = document) {
+    root.querySelectorAll('[data-book-call]').forEach(link => {
+        const intent = link.getAttribute('data-book-intent') || '';
+        link.href = bookingUrl(intent);
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+    });
+}
+
 function renderOffers(offers) {
     const container = document.getElementById('offers');
-    container.innerHTML = offers.map(offer => `
+    container.innerHTML = offers.map(offer => {
+        const intent = offer.name.toLowerCase().replace(/\s+/g, '-');
+        return `
         <article class="offer${offer.featured ? ' is-featured' : ''} reveal">
             ${offer.featured ? '<p class="offer-badge">Più richiesto</p>' : ''}
             <div class="offer-top">
@@ -28,8 +47,12 @@ function renderOffers(offers) {
                 ${offer.includes.map(item => `<li>${item}</li>`).join('')}
             </ul>
             <p class="offer-fit">${offer.fit}</p>
+            <a class="btn btn-primary offer-cta" data-book-call data-book-intent="${intent}" href="#">Richiedi ${offer.name}</a>
         </article>
-    `).join('');
+    `;
+    }).join('');
+
+    wireBookingLinks(container);
 }
 
 function renderCases(cases) {
@@ -105,6 +128,7 @@ function setupReveal() {
 
 async function initialize() {
     document.getElementById('year').textContent = String(new Date().getFullYear());
+    wireBookingLinks();
 
     try {
         const [offers, cases, now, selected] = await Promise.all([
@@ -122,7 +146,11 @@ async function initialize() {
     } catch (error) {
         console.error('Error loading site data:', error);
         const offers = document.getElementById('offers');
-        offers.innerHTML = '<p class="offer-summary">Contenuti temporaneamente non disponibili. Scrivimi su LinkedIn.</p>';
+        offers.innerHTML = `
+            <p class="offer-summary">Contenuti temporaneamente non disponibili.</p>
+            <a class="btn btn-primary" data-book-call href="#">Prenota una call</a>
+        `;
+        wireBookingLinks(offers);
     }
 }
 
