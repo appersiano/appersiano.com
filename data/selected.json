@@ -1,0 +1,29 @@
+{
+    "talks": [
+        {
+            "title": "Organizzare eventi senza perdere amici, sonno e sanità mentale",
+            "venue": "TechCommunityDay.it",
+            "date": "2025-05",
+            "link": "https://docs.google.com/presentation/d/1MqOuaoqk5hHN7Xw8u8N3D7BDSo0gKnf1H-xv5HOnEt8/edit?usp=sharing"
+        },
+        {
+            "title": "Epic Failures: lessons learned from developers",
+            "venue": "Codemotion Milan",
+            "date": "2024-11",
+            "link": "https://conferences.codemotion.com/milan2024/agenda/"
+        }
+    ],
+    "writing": [
+        {
+            "title": "From Zero to Product: Smart Baby Sleep LED Bar Light",
+            "date": "2024-03",
+            "link": "https://appersiano.medium.com/from-zero-to-product-smart-baby-sleep-led-bar-light-207164173c61"
+        },
+        {
+            "title": "Disaster Corner — Turning Developer Fails into Conference Wins",
+            "date": "2025-06",
+            "link": "https://medium.com/@appersiano/disaster-corner-turning-developer-fails-into-conference-wins-v0-1-7622ed86c44c"
+        }
+    ],
+    "community": "Organizzatore DevFest Milano e GDG Milano (2023–2025)."
+}
