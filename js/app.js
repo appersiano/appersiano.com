@@ -126,8 +126,36 @@ function setupReveal() {
     document.querySelectorAll('.reveal').forEach(node => observer.observe(node));
 }
 
+function setupTheme() {
+    const root = document.documentElement;
+    const toggle = document.querySelector('.theme-toggle');
+    if (!toggle) return;
+
+    const labelFor = theme => (theme === 'light' ? 'Attiva tema scuro' : 'Attiva tema chiaro');
+
+    const applyTheme = theme => {
+        root.setAttribute('data-theme', theme);
+        try {
+            localStorage.setItem('theme', theme);
+        } catch (e) {
+            /* ignore quota / private mode */
+        }
+        toggle.setAttribute('aria-label', labelFor(theme));
+        toggle.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+    };
+
+    const current = root.getAttribute('data-theme') || 'light';
+    applyTheme(current === 'dark' ? 'dark' : 'light');
+
+    toggle.addEventListener('click', () => {
+        const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        applyTheme(next);
+    });
+}
+
 async function initialize() {
     document.getElementById('year').textContent = String(new Date().getFullYear());
+    setupTheme();
     wireBookingLinks();
 
     try {
