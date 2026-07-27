@@ -867,6 +867,11 @@ main {
     .hero-copy {
         padding: 1.75rem 1.5rem 2.75rem;
         max-width: none;
+        box-shadow: none;
+    }
+
+    .hero-brand {
+        font-size: clamp(1.5rem, 7.8vw, 2.5rem);
     }
 
     .offers-list,
