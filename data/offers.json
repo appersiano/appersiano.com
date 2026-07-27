@@ -2,37 +2,37 @@
     "items": [
         {
             "name": "Discovery",
-            "duration": "1–2 sessioni",
-            "summary": "Audit tecnico e di prodotto, priorità chiare, piano di delivery concreto.",
+            "duration": "1–2 sessions",
+            "summary": "Technical and product audit, clear priorities, and a concrete delivery plan.",
             "includes": [
-                "Review codebase / architettura / roadmap",
-                "Risk e gap analysis",
-                "Piano actionable con next step"
+                "Codebase / architecture / roadmap review",
+                "Risk and gap analysis",
+                "Actionable plan with next steps"
             ],
-            "fit": "Per chi deve decidere cosa fare prima di investire settimane di build."
+            "fit": "For teams that need to decide what to do before investing weeks of build."
         },
         {
             "name": "MVP Sprint",
-            "duration": "Scope chiuso · settimane definite",
-            "summary": "Dal problema alla release: architettura, build, ship su store o ambiente interno.",
+            "duration": "Fixed scope · defined weeks",
+            "summary": "From problem to release: architecture, build, and ship to the store or an internal environment.",
             "includes": [
-                "Definizione scope e milestone",
-                "Implementazione Android / product engineering",
-                "Handoff documentato"
+                "Scope and milestone definition",
+                "Android / product engineering implementation",
+                "Documented handoff"
             ],
-            "fit": "Per founder e team che devono uscire con un MVP reale, non un prototipo da slide.",
+            "fit": "For founders and teams that need a real MVP out the door, not a slide-deck prototype.",
             "featured": true
         },
         {
             "name": "Fractional",
-            "duration": "Retainer mensile",
-            "summary": "Giorni dedicati ogni mese su product engineering, architettura e unblocking del team.",
+            "duration": "Monthly retainer",
+            "summary": "Dedicated days every month on product engineering, architecture, and unblocking the team.",
             "includes": [
-                "Ownership su feature e debiti tecnici critici",
-                "Pairing / review con il team",
-                "Priorità mensili condivise"
+                "Ownership of critical features and technical debt",
+                "Pairing / review with the team",
+                "Shared monthly priorities"
             ],
-            "fit": "Per team che vogliono seniority senza assumere full-time."
+            "fit": "For teams that want seniority without hiring full-time."
         }
     ]
 }
