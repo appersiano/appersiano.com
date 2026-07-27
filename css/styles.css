@@ -242,6 +242,8 @@ main {
     padding: 3.5rem clamp(1.25rem, 3vw, 2.25rem) 3.5rem 1.5rem;
     background: var(--bg);
     box-shadow: 1.5rem 0 2.5rem var(--bg);
+    container-type: inline-size;
+    container-name: hero-copy;
 }
 
 .hero-media {
@@ -284,14 +286,20 @@ main {
     margin: 0;
     font-family: var(--font-display);
     font-weight: 800;
-    font-size: clamp(2.35rem, 5.4vw, 4.25rem);
-    line-height: 0.95;
-    letter-spacing: -0.045em;
+    font-size: clamp(1.7rem, 11cqi, 3.35rem);
+    line-height: 1.05;
+    letter-spacing: -0.04em;
     color: var(--ink);
     max-width: 100%;
-    overflow-wrap: anywhere;
+    white-space: nowrap;
     opacity: 0;
     animation: rise 0.9s var(--ease) 0.12s forwards;
+}
+
+@supports not (font-size: 1cqi) {
+    .hero-brand {
+        font-size: clamp(1.7rem, 3.6vw, 3.2rem);
+    }
 }
 
 .hero-role {
