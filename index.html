@@ -103,7 +103,10 @@
             <section class="hero" aria-labelledby="hero-brand">
                 <div class="hero-copy">
                     <p class="hero-eyebrow">Milano · Remote</p>
-                    <h1 id="hero-brand" class="hero-brand">Alessandro Persiano</h1>
+                    <h1 id="hero-brand" class="hero-brand">
+                        <span class="hero-given">Alessandro</span>
+                        <span class="hero-family">Persiano</span>
+                    </h1>
                     <p class="hero-role">Product engineer — Android &amp; digital products</p>
                     <p class="hero-lede">Porto prodotti mobile da idea a release: architettura, MVP, shipping.</p>
                     <div class="cta-group">
@@ -113,14 +116,17 @@
                     <p class="hero-signal">Ora: building <a href="https://play.google.com/store/apps/details?id=com.appersiano.stagetimer" target="_blank" rel="noopener noreferrer">Stage Timer</a> · organizzo DevFest Milano</p>
                 </div>
                 <div class="hero-media">
-                    <img
-                        src="images/portrait.jpg"
-                        alt="Alessandro Persiano"
-                        class="hero-portrait"
-                        width="2000"
-                        height="1547"
-                        fetchpriority="high"
-                    >
+                    <div class="hero-portrait-frame" aria-hidden="true"></div>
+                    <div class="hero-portrait-wrap">
+                        <img
+                            src="images/portrait.jpg"
+                            alt="Alessandro Persiano"
+                            class="hero-portrait"
+                            width="2000"
+                            height="1547"
+                            fetchpriority="high"
+                        >
+                    </div>
                 </div>
             </section>
 
