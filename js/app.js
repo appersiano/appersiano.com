@@ -166,7 +166,7 @@ function setupPortrait() {
         hero.prepend(media);
         hero.classList.add('has-portrait');
     };
-    probe.src = `images/portrait.jpg?v=${Date.now().toString().slice(0, 8)}`;
+    probe.src = 'images/portrait.jpg';
 }
 
 async function initialize() {
