@@ -153,9 +153,26 @@ function setupTheme() {
     });
 }
 
+function setupPortrait() {
+    const hero = document.querySelector('.hero');
+    if (!hero || hero.querySelector('.hero-media')) return;
+
+    const probe = new Image();
+    probe.onload = () => {
+        const media = document.createElement('div');
+        media.className = 'hero-media';
+        media.setAttribute('aria-hidden', 'true');
+        media.innerHTML = `<img src="images/portrait.jpg" alt="" class="hero-portrait" width="1600" height="2000">`;
+        hero.prepend(media);
+        hero.classList.add('has-portrait');
+    };
+    probe.src = `images/portrait.jpg?v=${Date.now().toString().slice(0, 8)}`;
+}
+
 async function initialize() {
     document.getElementById('year').textContent = String(new Date().getFullYear());
     setupTheme();
+    setupPortrait();
     wireBookingLinks();
 
     try {
