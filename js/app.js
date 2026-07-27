@@ -14,7 +14,7 @@ function formatMonthYear(dateStr) {
     const [year, month] = dateStr.split('-');
     if (!month) return year;
     const date = new Date(Number(year), Number(month) - 1);
-    return date.toLocaleDateString('it-IT', { month: 'short', year: 'numeric' });
+    return date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
 }
 
 function bookingUrl(intent) {
@@ -37,7 +37,7 @@ function renderOffers(offers) {
         const intent = offer.name.toLowerCase().replace(/\s+/g, '-');
         return `
         <article class="offer${offer.featured ? ' is-featured' : ''} reveal">
-            ${offer.featured ? '<p class="offer-badge">Più richiesto</p>' : ''}
+            ${offer.featured ? '<p class="offer-badge">Most requested</p>' : ''}
             <div class="offer-top">
                 <h3 class="offer-name">${offer.name}</h3>
                 <p class="offer-duration">${offer.duration}</p>
@@ -47,7 +47,7 @@ function renderOffers(offers) {
                 ${offer.includes.map(item => `<li>${item}</li>`).join('')}
             </ul>
             <p class="offer-fit">${offer.fit}</p>
-            <a class="btn btn-primary offer-cta" data-book-call data-book-intent="${intent}" href="#">Richiedi ${offer.name}</a>
+            <a class="btn btn-primary offer-cta" data-book-call data-book-intent="${intent}" href="#">Request ${offer.name}</a>
         </article>
     `;
     }).join('');
@@ -56,7 +56,7 @@ function renderOffers(offers) {
 }
 
 function renderCases(cases) {
-    const container = document.getElementById('cases');
+    const container = document.getElementById('cases-list');
     container.innerHTML = cases.map(item => `
         <article class="case reveal">
             <div>
@@ -64,9 +64,9 @@ function renderCases(cases) {
                 <p class="case-client">${item.client}</p>
             </div>
             <div class="case-body">
-                <p><span class="case-label">Problema</span>${item.problem}</p>
-                <p><span class="case-label">Lavoro</span>${item.work}</p>
-                <p><span class="case-label">Risultato</span>${item.result}</p>
+                <p><span class="case-label">Problem</span>${item.problem}</p>
+                <p><span class="case-label">Work</span>${item.work}</p>
+                <p><span class="case-label">Result</span>${item.result}</p>
                 <a class="case-link" href="${item.link}" target="_blank" rel="noopener noreferrer">${item.linkLabel}</a>
             </div>
         </article>
@@ -74,7 +74,7 @@ function renderCases(cases) {
 }
 
 function renderNow(now) {
-    document.getElementById('now-updated').textContent = `Aggiornato ${now.updated}`;
+    document.getElementById('now-updated').textContent = `Updated ${now.updated}`;
     document.getElementById('now-list').innerHTML = now.items
         .map(item => `<li class="reveal">${item}</li>`)
         .join('');
@@ -131,7 +131,7 @@ function setupTheme() {
     const toggle = document.querySelector('.theme-toggle');
     if (!toggle) return;
 
-    const labelFor = theme => (theme === 'light' ? 'Attiva tema scuro' : 'Attiva tema chiaro');
+    const labelFor = theme => (theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode');
 
     const applyTheme = theme => {
         root.setAttribute('data-theme', theme);
@@ -175,8 +175,8 @@ async function initialize() {
         console.error('Error loading site data:', error);
         const offers = document.getElementById('offers');
         offers.innerHTML = `
-            <p class="offer-summary">Contenuti temporaneamente non disponibili.</p>
-            <a class="btn btn-primary" data-book-call href="#">Prenota una call</a>
+            <p class="offer-summary">Content temporarily unavailable.</p>
+            <a class="btn btn-primary" data-book-call href="#">Book a call</a>
         `;
         wireBookingLinks(offers);
     }

@@ -2,30 +2,30 @@
     "items": [
         {
             "title": "Stage Timer",
-            "client": "Prodotto proprio · Play Store",
-            "problem": "Speaker e organizer avevano bisogno di un countdown fullscreen, senza distrazioni, utilizzabile su qualsiasi telefono o tablet.",
-            "work": "Product engineering end-to-end: UX, architettura Android/Kotlin, release su Play Store. App gratuita, senza ads.",
-            "result": "Prodotto live usato in eventi e talk. Proof di shipping da idea a store.",
+            "client": "Own product · Play Store",
+            "problem": "Speakers and organizers needed a distraction-free fullscreen countdown that works on any phone or tablet.",
+            "work": "End-to-end product engineering: UX, Android/Kotlin architecture, Play Store release. Free app, no ads.",
+            "result": "Live product used at events and talks. Proof of shipping from idea to store.",
             "link": "https://play.google.com/store/apps/details?id=com.appersiano.stagetimer",
-            "linkLabel": "Vedi su Play Store"
+            "linkLabel": "View on Play Store"
         },
         {
             "title": "Smart Baby Sleep LED",
-            "client": "Prodotto hardware + app",
-            "problem": "Serviva una luce notte smart controllabile da mobile, con firmware e companion app.",
-            "work": "Dal firmware Arduino al BLE fino all'app Android: stack completo idea → prototipo → prodotto documentato.",
-            "result": "Sistema funzionante e case study pubblico sul percorso 0→1.",
+            "client": "Hardware + app product",
+            "problem": "Needed a smart night light controllable from mobile, with firmware and a companion app.",
+            "work": "From Arduino firmware to BLE to the Android app: full stack from idea → prototype → documented product.",
+            "result": "Working system and a public case study of the 0→1 path.",
             "link": "https://appersiano.medium.com/from-zero-to-product-smart-baby-sleep-led-bar-light-207164173c61",
-            "linkLabel": "Leggi il case study"
+            "linkLabel": "Read the case study"
         },
         {
             "title": "WebNFC VCard",
-            "client": "Tool web · eventi",
-            "problem": "A meetup e conference lo scambio contatti era lento: biglietti, QR sparsi, zero standard.",
-            "work": "Tool web per scrivere e condividere vCard via Web NFC API — dal prototipo al repo usabile sul campo.",
-            "result": "Demo funzionante per exchange contatti in contesto eventi.",
+            "client": "Web tool · events",
+            "problem": "At meetups and conferences, contact exchange was slow: paper cards, scattered QR codes, no standard.",
+            "work": "Web tool to write and share vCards via the Web NFC API — from prototype to a field-ready repo.",
+            "result": "Working demo for contact exchange in event contexts.",
             "link": "https://github.com/appersiano/WebNFCVcard",
-            "linkLabel": "Vedi su GitHub"
+            "linkLabel": "View on GitHub"
         }
     ]
 }
