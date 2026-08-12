@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Video Stream Quality Test</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 32px;
+    background: white;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  h1 { font-size: 32px; margin: 0 0 24px; }
+  .section { margin: 28px 0; }
+  .label { font: bold 14px monospace; margin-bottom: 8px; }
+  .text { margin: 4px 0; line-height: 1.15; }
+  .t8 { font-size: 8px; }
+  .t10 { font-size: 10px; }
+  .t12 { font-size: 12px; }
+  .t14 { font-size: 14px; }
+  .t16 { font-size: 16px; }
+  .t20 { font-size: 20px; }
+  .t24 { font-size: 24px; }
+  .t32 { font-size: 32px; }
+  .t48 { font-size: 48px; }
+  .t64 { font-size: 64px; }
+  .t96 { font-size: 96px; }
+  .t128 { font-size: 128px; }
+  .mono { font-family: "Courier New", Courier, monospace; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 0;
+    width: 100%;
+    max-width: 1000px;
+    border: 1px solid #000;
+  }
+  .grid div {
+    height: 40px;
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+  }
+  .thin {
+    height: 1px;
+    background: #000;
+    margin: 3px 0;
+  }
+  .checker {
+    width: 240px;
+    height: 240px;
+    background:
+      conic-gradient(#000 25%, #fff 0 50%, #000 0 75%, #fff 0)
+      0 0 / 20px 20px;
+  }
+</style>
+</head>
+<body>
+  <h1>Video Stream Quality Test</h1>
+
+  <div class="section">
+    <div class="label">TEXT SIZES</div>
+    <div class="text t8">8px — The quick brown fox jumps over the lazy dog — 0123456789</div>
+    <div class="text t10">10px — The quick brown fox jumps over the lazy dog — 0123456789</div>
+    <div class="text t12">12px — The quick brown fox jumps over the lazy dog — 0123456789</div>
+    <div class="text t14">14px — The quick brown fox jumps over the lazy dog — 0123456789</div>
+    <div class="text t16">16px — The quick brown fox jumps over the lazy dog — 0123456789</div>
+    <div class="text t20">20px — The quick brown fox jumps over the lazy dog — 0123456789</div>
+    <div class="text t24">24px — The quick brown fox jumps over the lazy dog — 0123456789</div>
+    <div class="text t32">32px — The quick brown fox jumps over the lazy dog — 0123456789</div>
+    <div class="text t48">48px — The quick brown fox jumps over the lazy dog — 0123456789</div>
+    <div class="text t64">64px — The quick brown fox jumps over the lazy dog — 0123456789</div>
+    <div class="text t96">96px — ABCDEFGHIJKLMNOPQRSTUVWXYZ</div>
+    <div class="text t128">128px — 0123456789</div>
+  </div>
+
+  <div class="section">
+    <div class="label">MONOSPACE / HIGH FREQUENCY TEXT</div>
+    <div class="text t12 mono">MMMMMMMM WWWWWWWW iiiiiiii llllllll 11111111 00000000</div>
+    <div class="text t16 mono">ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789</div>
+    <div class="text t20 mono">The quick brown fox jumps over the lazy dog</div>
+    <div class="text t24 mono">ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789</div>
+  </div>
+
+  <div class="section">
+    <div class="label">FINE LINES</div>
+    <div class="thin"></div><div class="thin"></div><div class="thin"></div>
+    <div style="height:4px;background:#000;margin:6px 0"></div>
+    <div style="height:8px;background:#000;margin:6px 0"></div>
+  </div>
+
+  <div class="section">
+    <div class="label">CHECKERBOARD</div>
+    <div class="checker"></div>
+  </div>
+
+  <div class="section">
+    <div class="label">CONTRAST</div>
+    <div class="text t32">BLACK TEXT ON WHITE BACKGROUND</div>
+    <div style="background:#000;color:#fff;padding:12px;margin-top:12px" class="t32">
+      WHITE TEXT ON BLACK BACKGROUND
+    </div>
+  </div>
+</body>
+</html>
