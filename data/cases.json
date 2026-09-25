@@ -1,0 +1,31 @@
+{
+    "items": [
+        {
+            "title": "Stage Timer",
+            "client": "Own product · Play Store",
+            "problem": "Speakers and organizers needed a distraction-free fullscreen countdown that works on any phone or tablet.",
+            "work": "End-to-end product engineering: UX, Android/Kotlin architecture, Play Store release. Free app, no ads.",
+            "result": "Live product used at events and talks. Proof of shipping from idea to store.",
+            "link": "https://play.google.com/store/apps/details?id=com.appersiano.stagetimer",
+            "linkLabel": "View on Play Store"
+        },
+        {
+            "title": "Smart Baby Sleep LED",
+            "client": "Hardware + app product",
+            "problem": "Needed a smart night light controllable from mobile, with firmware and a companion app.",
+            "work": "From Arduino firmware to BLE to the Android app: full stack from idea → prototype → documented product.",
+            "result": "Working system and a public case study of the 0→1 path.",
+            "link": "https://appersiano.medium.com/from-zero-to-product-smart-baby-sleep-led-bar-light-207164173c61",
+            "linkLabel": "Read the case study"
+        },
+        {
+            "title": "WebNFC VCard",
+            "client": "Web tool · events",
+            "problem": "At meetups and conferences, contact exchange was slow: paper cards, scattered QR codes, no standard.",
+            "work": "Web tool to write and share vCards via the Web NFC API — from prototype to a field-ready repo.",
+            "result": "Working demo for contact exchange in event contexts.",
+            "link": "https://github.com/appersiano/WebNFCVcard",
+            "linkLabel": "View on GitHub"
+        }
+    ]
+}
