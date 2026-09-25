@@ -1,29 +1,29 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="it" data-theme="light">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Alessandro Persiano - Creative Software Engineer</title>
+        <title>Alessandro Persiano</title>
         
         <!-- Favicon -->
         <link rel="icon" type="image/svg+xml" href="favicon.svg">
         
         <!-- Primary Meta Tags -->
-        <meta name="title" content="Alessandro Persiano - Creative Software Engineer">
-        <meta name="description" content="Creative Software and Product Engineer based in Milan. GDG Milano Organizer passionate about building digital products and experimenting with technologies.">
+        <meta name="title" content="Alessandro Persiano">
+        <meta name="description" content="Alessandro Persiano, aka appersiano. AI Product & Software Engineer. Prodotti digitali, sperimentazione e community. Per una consulenza: etnatech.it.">
         
         <!-- Open Graph / Facebook -->
         <meta property="og:type" content="website">
-        <meta property="og:url" content="https://appersiano.github.io/">
-        <meta property="og:title" content="Alessandro Persiano - Creative Software Engineer">
-        <meta property="og:description" content="Creative Software and Product Engineer based in Milan. GDG Milano Organizer passionate about building digital products and experimenting with technologies.">
+        <meta property="og:url" content="https://www.appersiano.com/">
+        <meta property="og:title" content="Alessandro Persiano">
+        <meta property="og:description" content="Alessandro Persiano, aka appersiano. AI Product & Software Engineer. Prodotti digitali, sperimentazione e community. Per una consulenza: etnatech.it.">
         <meta property="og:image" content="https://avatars.githubusercontent.com/appersiano">
         
         <!-- Twitter -->
         <meta property="twitter:card" content="summary_large_image">
-        <meta property="twitter:url" content="https://appersiano.github.io/">
-        <meta property="twitter:title" content="Alessandro Persiano - Creative Software Engineer">
-        <meta property="twitter:description" content="Creative Software and Product Engineer based in Milan. GDG Milano Organizer passionate about building digital products and experimenting with technologies.">
+        <meta property="twitter:url" content="https://www.appersiano.com/">
+        <meta property="twitter:title" content="Alessandro Persiano">
+        <meta property="twitter:description" content="Alessandro Persiano, aka appersiano. AI Product & Software Engineer. Prodotti digitali, sperimentazione e community. Per una consulenza: etnatech.it.">
         <meta property="twitter:image" content="https://avatars.githubusercontent.com/appersiano">
 
         <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
@@ -50,9 +50,9 @@
             </div>
             <div class="sections">
                 <div class="tabs">
-                    <button class="tab active" onclick="openTab(event, 'experiments')">🧪 Experiments</button>
-                    <button class="tab" onclick="openTab(event, 'blog')">✍️ Blog Posts</button>
-                    <button class="tab" onclick="openTab(event, 'talks')">🎤 Talks</button>
+                    <button class="tab active" onclick="openTab(event, 'experiments')">🧪 Esperimenti</button>
+                    <button class="tab" onclick="openTab(event, 'blog')">✍️ Post</button>
+                    <button class="tab" onclick="openTab(event, 'talks')">🎤 Talk</button>
                     <button class="tab" onclick="openTab(event, 'community')">👥 Community</button>
                 </div>
 
@@ -141,23 +141,22 @@
 
             // Start the typewriter effect for introduction only
             typewriter
-                .typeString('Hey! 👋<br>')
-                .pauseFor(300)
-                .typeString("I'm <span class='highlight'>Alessandro</span> aka <span class='highlight'>appersiano</span>")
-                .pauseFor(300)
-                .typeString(' and I am a <br>')
-                .pauseFor(200)
-                .typeString('<span class="highlight">Creative Software and Product Engineer</span>')
-                .typeString(' based in Milan 🇮🇹.')
+                .typeString('Ciao! 👋<br>')
+                .pauseFor(250)
+                .typeString("Sono <span class='highlight'>Alessandro</span>, aka <span class='highlight'>appersiano</span>.")
                 .callFunction(() => {
-                    // Add the remaining text directly with fade-in effect
+                    const cursor = document.querySelector('.Typewriter__cursor');
+                    if (cursor) cursor.remove();
+
                     const additionalText = document.createElement('div');
                     additionalText.className = 'fade-in';
                     additionalText.innerHTML = `
-                        <br><br>
-                        I love to create digital products and experiment with technologies.
                         <br>
-                        I'm also passionate about <span class="highlight">community building</span> as an Organizer of GDG Milano.
+                        Sono un <span class="highlight">AI Product &amp; Software Engineer</span>.
+                        Mi piace sviluppare prodotti digitali e sperimentare con tutte le tecnologie.
+                        Ho organizzato in passato Community Events con <span class="highlight">GDG Milano</span>.
+                        <br>
+                        Se vuoi contattarmi per una consulenza → <a class="work-link" href="https://etnatech.it" target="_blank" rel="noopener noreferrer">etnatech.it</a>.
                     `;
                     document.getElementById('typewriter').appendChild(additionalText);
                     
