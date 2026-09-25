@@ -1,20 +1,23 @@
 # appersiano.com
 
-This is the source code for **appersiano.com**, my personal website. It hosts my experiments, blog posts, and about me pages.
+Sito personale di Alessandro Persiano, aka appersiano.
 
-## Build (static site)
+La homepage si presenta come AI Product & Software Engineer: prodotti digitali, sperimentazione e community. La consulenza non si chiede qui. Il link porta a [etnatech.it](https://etnatech.it).
 
-Content from `data/*.json` is pre-rendered at build time—no runtime `fetch`. Output in `dist/`:
+## Cosa c'è
+
+- **Homepage** (`/`): intro, link social, e quattro schede — Esperimenti, Post, Talk, Community.
+- **Privacy di Stage Timer** (`/apps/stagetimer/privacypolicy`).
+- **Video Stream Quality Test** (`/utility/vsqt`), una pagina per controllare testo e resa video.
+
+Le schede della homepage leggono i contenuti da `data/experiments.json`, `data/blog.json`, `data/talks.json` e `data/community.json`.
+
+## In locale
+
+Serve un server, perché la homepage carica i JSON a runtime.
 
 ```bash
-npm run build
+python3 -m http.server
 ```
 
-Then serve or deploy the `dist/` folder.
-
-### GitHub Pages (Actions)
-
-A workflow in `.github/workflows/deploy.yml` builds and deploys on every push to `main`. To enable:
-
-1. **Settings → Pages** → under "Build and deployment" choose **GitHub Actions** as source
-2. Push to `main` — the workflow runs and deploys `dist/` automatically
+Poi apri `http://127.0.0.1:8000/`.
