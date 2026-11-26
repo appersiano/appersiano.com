@@ -27,34 +27,70 @@
         <meta property="twitter:description" content="Alessandro Persiano, aka appersiano. AI Product & Software Engineer. Prodotti digitali, sperimentazione e community. Per una consulenza: etnatech.it.">
         <meta property="twitter:image" content="https://avatars.githubusercontent.com/appersiano">
 
-        <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Syne:wght@500;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
         <link rel="stylesheet" href="css/styles.css">
+        <script>
+            (function () {
+                try {
+                    var theme = localStorage.getItem('theme');
+                    if (theme === 'dark' || theme === 'light') {
+                        document.documentElement.setAttribute('data-theme', theme);
+                    }
+                } catch (e) { /* ignore */ }
+            })();
+        </script>
     </head>
     <body>
-        <button class="theme-toggle" aria-label="Toggle dark mode">
+        <div class="atmosphere" aria-hidden="true">
+            <div class="orb orb-a"></div>
+            <div class="orb orb-b"></div>
+            <div class="orb orb-c"></div>
+            <div class="grid"></div>
+            <div class="noise"></div>
+        </div>
+
+        <button class="theme-toggle" aria-label="Toggle dark mode" type="button">
             <i class="fas fa-moon"></i>
         </button>
-        <div class="content">
-            <img src="https://avatars.githubusercontent.com/appersiano" alt="Alessandro's Avatar" class="avatar" onclick="handleAvatarClick(event)">
-            <div id="typewriter"></div>
-            <div class="social-links">
-                <a href="https://github.com/appersiano" target="_blank" title="GitHub">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://linkedin.com/in/alessandro-persiano" target="_blank" title="LinkedIn">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="https://medium.com/@appersiano" target="_blank" title="Medium">
-                    <i class="fab fa-medium"></i>
-                </a>
-            </div>
+
+        <main class="content">
+            <header class="hero">
+                <div class="avatar-wrap">
+                    <span class="avatar-ring" aria-hidden="true"></span>
+                    <img
+                        src="https://avatars.githubusercontent.com/appersiano"
+                        alt="Alessandro Persiano"
+                        class="avatar"
+                        width="148"
+                        height="148"
+                        onclick="handleAvatarClick(event)"
+                    >
+                </div>
+                <h1 class="brand"><span>Alessandro Persiano</span>appersiano</h1>
+                <div id="typewriter"></div>
+                <div class="social-links">
+                    <a href="https://github.com/appersiano" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/alessandro-persiano" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://medium.com/@appersiano" target="_blank" rel="noopener noreferrer" title="Medium" aria-label="Medium">
+                        <i class="fab fa-medium"></i>
+                    </a>
+                </div>
+            </header>
+
             <div class="sections">
                 <div class="tabs">
-                    <button class="tab active" onclick="openTab(event, 'experiments')">🧪 Esperimenti</button>
-                    <button class="tab" onclick="openTab(event, 'blog')">✍️ Post</button>
-                    <button class="tab" onclick="openTab(event, 'talks')">🎤 Talk</button>
-                    <button class="tab" onclick="openTab(event, 'community')">👥 Community</button>
+                    <button class="tab active" type="button" data-tab="experiments" onclick="openTab(event, 'experiments')">Esperimenti</button>
+                    <button class="tab" type="button" data-tab="blog" onclick="openTab(event, 'blog')">Post</button>
+                    <button class="tab" type="button" data-tab="talks" onclick="openTab(event, 'talks')">Talk</button>
+                    <button class="tab" type="button" data-tab="community" onclick="openTab(event, 'community')">Community</button>
+                    <span class="tab-indicator" aria-hidden="true"></span>
                 </div>
 
                 <div id="experiments" class="section active"></div>
@@ -62,180 +98,11 @@
                 <div id="talks" class="section"></div>
                 <div id="community" class="section"></div>
             </div>
-        </div>
+        </main>
 
-        <!-- Include GraphemeSplitter.js -->
         <script src="https://unpkg.com/grapheme-splitter@1.0.4/index.js"></script>
-
-        <!-- Include Typewriter.js -->
         <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
-        <script>
-            // Avatar click handler with vibration
-            function handleAvatarClick(event) {
-                // Prevent default behavior
-                event.preventDefault();
-
-                // Check if the Vibration API is supported
-                if ('vibrate' in navigator) {
-                    // Vibrate for 50ms
-                    navigator.vibrate(50);
-                }
-
-                // Add a small animation class
-                const avatar = event.target;
-                avatar.style.transform = 'scale(0.95)';
-                setTimeout(() => {
-                    avatar.style.transform = '';
-                }, 150);
-            }
-
-            // Load section data
-            async function loadSectionData(section) {
-                try {
-                    const response = await fetch(`data/${section}.json`);
-                    const data = await response.json();
-                    return data.items;
-                } catch (error) {
-                    console.error(`Error loading ${section} data:`, error);
-                    return [];
-                }
-            }
-
-            // Create card HTML
-            function createCardHTML(item) {
-                return `
-                    <div class="item">
-                        <a href="${item.link}" target="_blank">
-                            <h3>${item.title}</h3>
-                            <p>${item.description}</p>
-                            <div class="tags">
-                                ${item.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
-                            </div>
-                        </a>
-                    </div>
-                `;
-            }
-
-            // Initialize sections
-            async function initializeSections() {
-                const sections = ['experiments', 'blog', 'talks', 'community'];
-                
-                for (const section of sections) {
-                    const items = await loadSectionData(section);
-                    const sectionElement = document.getElementById(section);
-                    sectionElement.innerHTML = items.map(createCardHTML).join('');
-                }
-            }
-
-            const stringSplitter = string => {
-                const splitter = new GraphemeSplitter();
-                return splitter.splitGraphemes(string);
-            };
-
-            // Initialize Typewriter
-            const typewriter = new Typewriter('#typewriter', {
-                loop: false,
-                delay: 25,
-                cursor: '▋',
-                stringSplitter
-            });
-
-            // Start the typewriter effect for introduction only
-            typewriter
-                .typeString('Ciao! 👋<br>')
-                .pauseFor(250)
-                .typeString("Sono <span class='highlight'>Alessandro</span>, aka <span class='highlight'>appersiano</span>.")
-                .callFunction(() => {
-                    const cursor = document.querySelector('.Typewriter__cursor');
-                    if (cursor) cursor.remove();
-
-                    const additionalText = document.createElement('div');
-                    additionalText.className = 'fade-in';
-                    additionalText.innerHTML = `
-                        <br>
-                        Sono un <span class="highlight">AI Product &amp; Software Engineer</span>.
-                        Mi piace sviluppare prodotti digitali e sperimentare con tutte le tecnologie.
-                        Ho organizzato in passato Community Events con <span class="highlight">GDG Milano</span>.
-                        <br>
-                        Se vuoi contattarmi per una consulenza → <a class="work-link" href="https://etnatech.it" target="_blank" rel="noopener noreferrer">etnatech.it</a>.
-                    `;
-                    document.getElementById('typewriter').appendChild(additionalText);
-                    
-                    // Show social links and sections
-                    document.querySelector('.social-links').classList.add('visible');
-                    setTimeout(() => {
-                        document.querySelector('.sections').classList.add('visible');
-                    }, 300);
-                })
-                .start();
-
-            // Tab functionality
-            function openTab(evt, tabName) {
-                const sections = document.getElementsByClassName('section');
-                for (let section of sections) {
-                    section.classList.remove('active');
-                }
-
-                const tabs = document.getElementsByClassName('tab');
-                for (let tab of tabs) {
-                    tab.classList.remove('active');
-                }
-
-                document.getElementById(tabName).classList.add('active');
-                if (evt) {
-                    evt.currentTarget.classList.add('active');
-                    // Update URL hash without scrolling
-                    history.pushState(null, null, `#${tabName}`);
-                }
-            }
-
-            // Handle direct navigation via URL hash
-            function handleHashNavigation() {
-                const hash = window.location.hash.slice(1); // Remove the # symbol
-                if (hash) {
-                    const validTabs = ['experiments', 'blog', 'talks', 'community'];
-                    if (validTabs.includes(hash)) {
-                        // Find the tab button
-                        const tabButton = document.querySelector(`.tab[onclick="openTab(event, '${hash}')"]`);
-                        if (tabButton) {
-                            // Simulate click on the tab
-                            openTab({ currentTarget: tabButton }, hash);
-                        }
-                    }
-                }
-            }
-
-            // Initialize the sections when the page loads
-            document.addEventListener('DOMContentLoaded', () => {
-                initializeSections();
-                handleHashNavigation(); // Handle initial hash if present
-            });
-
-            // Listen for hash changes
-            window.addEventListener('hashchange', handleHashNavigation);
-
-            // Theme toggle functionality
-            const themeToggle = document.querySelector('.theme-toggle');
-            const html = document.documentElement;
-            const themeIcon = themeToggle.querySelector('i');
-
-            // Check for saved theme preference
-            const savedTheme = localStorage.getItem('theme') || 'light';
-            html.setAttribute('data-theme', savedTheme);
-            updateThemeIcon(savedTheme);
-
-            themeToggle.addEventListener('click', () => {
-                const currentTheme = html.getAttribute('data-theme');
-                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-                
-                html.setAttribute('data-theme', newTheme);
-                localStorage.setItem('theme', newTheme);
-                updateThemeIcon(newTheme);
-            });
-
-            function updateThemeIcon(theme) {
-                themeIcon.className = theme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
-            }
-        </script>
+        <script src="https://cdn.jsdelivr.net/npm/animejs@4.5.0/dist/bundles/anime.umd.min.js"></script>
+        <script src="js/site.js"></script>
     </body>
 </html>
