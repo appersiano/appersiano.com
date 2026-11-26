@@ -6,7 +6,7 @@ La homepage si presenta come AI Product & Software Engineer: prodotti digitali, 
 
 ## Cosa c'è
 
-- **Homepage** (`/`): intro animata (anime.js), link social, e quattro schede — Esperimenti, Post, Talk, Community.
+- **Homepage** (`/`): stage interattivo a particelle (canvas) + Motion per layout/scroll/spring; quattro schede — Esperimenti, Post, Talk, Community.
 - **Privacy di Stage Timer** (`/apps/stagetimer/privacypolicy`).
 - **Video Stream Quality Test** (`/utility/vsqt`), una pagina per controllare testo e resa video.
 
