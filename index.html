@@ -1,26 +1,22 @@
 <!DOCTYPE html>
-<html lang="it" data-theme="light">
+<html lang="it" data-theme="dark">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Alessandro Persiano</title>
-        
-        <!-- Favicon -->
+        <title>Alessandro Persiano — appersiano</title>
+
         <link rel="icon" type="image/svg+xml" href="favicon.svg">
         <meta name="facebook-domain-verification" content="xrtnq39tpwwwa203dylhfu0byeb68c" />
-        
-        <!-- Primary Meta Tags -->
+
         <meta name="title" content="Alessandro Persiano">
         <meta name="description" content="Alessandro Persiano, aka appersiano. AI Product & Software Engineer. Prodotti digitali, sperimentazione e community. Per una consulenza: etnatech.it.">
-        
-        <!-- Open Graph / Facebook -->
+
         <meta property="og:type" content="website">
         <meta property="og:url" content="https://www.appersiano.com/">
         <meta property="og:title" content="Alessandro Persiano">
         <meta property="og:description" content="Alessandro Persiano, aka appersiano. AI Product & Software Engineer. Prodotti digitali, sperimentazione e community. Per una consulenza: etnatech.it.">
         <meta property="og:image" content="https://avatars.githubusercontent.com/appersiano">
-        
-        <!-- Twitter -->
+
         <meta property="twitter:card" content="summary_large_image">
         <meta property="twitter:url" content="https://www.appersiano.com/">
         <meta property="twitter:title" content="Alessandro Persiano">
@@ -29,7 +25,7 @@
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Syne:wght@500;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
         <link rel="stylesheet" href="css/styles.css">
         <script>
@@ -44,65 +40,98 @@
         </script>
     </head>
     <body>
-        <div class="atmosphere" aria-hidden="true">
-            <div class="orb orb-a"></div>
-            <div class="orb orb-b"></div>
-            <div class="orb orb-c"></div>
-            <div class="grid"></div>
-            <div class="noise"></div>
-        </div>
+        <canvas id="field" class="field" aria-hidden="true"></canvas>
+        <div class="vignette" aria-hidden="true"></div>
 
-        <button class="theme-toggle" aria-label="Toggle dark mode" type="button">
-            <i class="fas fa-moon"></i>
-        </button>
-
-        <main class="content">
-            <header class="hero">
-                <div class="avatar-wrap">
-                    <span class="avatar-ring" aria-hidden="true"></span>
-                    <img
-                        src="https://avatars.githubusercontent.com/appersiano"
-                        alt="Alessandro Persiano"
-                        class="avatar"
-                        width="148"
-                        height="148"
-                        onclick="handleAvatarClick(event)"
-                    >
-                </div>
-                <h1 class="brand"><span>Alessandro Persiano</span>appersiano</h1>
-                <div id="typewriter"></div>
-                <div class="social-links">
-                    <a href="https://github.com/appersiano" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="GitHub">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://linkedin.com/in/alessandro-persiano" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="https://medium.com/@appersiano" target="_blank" rel="noopener noreferrer" title="Medium" aria-label="Medium">
-                        <i class="fab fa-medium"></i>
-                    </a>
-                </div>
-            </header>
-
-            <div class="sections">
-                <div class="tabs">
-                    <button class="tab active" type="button" data-tab="experiments" onclick="openTab(event, 'experiments')">Esperimenti</button>
-                    <button class="tab" type="button" data-tab="blog" onclick="openTab(event, 'blog')">Post</button>
-                    <button class="tab" type="button" data-tab="talks" onclick="openTab(event, 'talks')">Talk</button>
-                    <button class="tab" type="button" data-tab="community" onclick="openTab(event, 'community')">Community</button>
-                    <span class="tab-indicator" aria-hidden="true"></span>
-                </div>
-
-                <div id="experiments" class="section active"></div>
-                <div id="blog" class="section"></div>
-                <div id="talks" class="section"></div>
-                <div id="community" class="section"></div>
+        <header class="topbar">
+            <a class="wordmark" href="#stage" data-magnetic>appersiano</a>
+            <div class="topbar-actions">
+                <a class="top-link" href="https://github.com/appersiano" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a class="top-link" href="https://linkedin.com/in/alessandro-persiano" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a class="top-link" href="https://medium.com/@appersiano" target="_blank" rel="noopener noreferrer" aria-label="Medium"><i class="fab fa-medium"></i></a>
+                <button class="theme-toggle" aria-label="Toggle theme" type="button">
+                    <i class="fas fa-sun"></i>
+                </button>
             </div>
+        </header>
+
+        <main>
+            <section id="stage" class="stage">
+                <div class="stage-core">
+                    <button class="nucleus" type="button" aria-label="Interagisci con il campo" id="nucleus">
+                        <img src="https://avatars.githubusercontent.com/appersiano" alt="" width="160" height="160" class="nucleus-img" draggable="false">
+                        <span class="nucleus-pulse" aria-hidden="true"></span>
+                    </button>
+                </div>
+
+                <div class="stage-copy">
+                    <p class="kicker"><span class="kicker-dot"></span> AI Product &amp; Software Engineer</p>
+                    <h1 class="brand">
+                        <span class="brand-sub">Alessandro Persiano</span>
+                        appersiano
+                    </h1>
+                    <p class="lede">
+                        Prodotto digitale, sperimentazione e community.
+                        Costruisco cose che si muovono — nel codice e tra le persone.
+                    </p>
+                    <div class="cta-row">
+                        <a class="btn btn-primary" href="#work" data-magnetic>Esplora il lavoro</a>
+                        <a class="btn btn-ghost" href="https://etnatech.it" target="_blank" rel="noopener noreferrer" data-magnetic>Consulenza → etnatech.it</a>
+                    </div>
+                </div>
+
+                <a class="scroll-cue" href="#work" aria-label="Scorri al lavoro">
+                    <span>scroll</span>
+                    <span class="scroll-line"></span>
+                </a>
+
+                <p class="hint" id="field-hint">Muovi il cursore · clicca il nucleo</p>
+            </section>
+
+            <section id="work" class="work">
+                <div class="work-head">
+                    <div class="work-meta">
+                        <p class="section-label">Selected work</p>
+                        <h2>Cose fatte, dette, costruite.</h2>
+                    </div>
+                    <div class="tabs" role="tablist" aria-label="Categorie">
+                        <button class="tab active" type="button" role="tab" aria-selected="true" data-tab="experiments">Esperimenti</button>
+                        <button class="tab" type="button" role="tab" aria-selected="false" data-tab="blog">Post</button>
+                        <button class="tab" type="button" role="tab" aria-selected="false" data-tab="talks">Talk</button>
+                        <button class="tab" type="button" role="tab" aria-selected="false" data-tab="community">Community</button>
+                        <span class="tab-ink" data-layout-id="tab-ink" aria-hidden="true"></span>
+                    </div>
+                    <div class="scroll-meter" aria-hidden="true">
+                        <span class="scroll-meter-fill"></span>
+                    </div>
+                </div>
+
+                <div id="experiments" class="panel active" role="tabpanel"></div>
+                <div id="blog" class="panel" role="tabpanel" hidden></div>
+                <div id="talks" class="panel" role="tabpanel" hidden></div>
+                <div id="community" class="panel" role="tabpanel" hidden></div>
+            </section>
+
+            <footer class="closing">
+                <p class="closing-label">Next</p>
+                <h2>Hai un prodotto da far nascere<br>o un’idea da stressare?</h2>
+                <a class="btn btn-primary btn-large" href="https://etnatech.it" target="_blank" rel="noopener noreferrer" data-magnetic>Parliamone su etnatech.it</a>
+                <p class="closing-copy">© <span id="year"></span> Alessandro Persiano</p>
+            </footer>
         </main>
 
-        <script src="https://unpkg.com/grapheme-splitter@1.0.4/index.js"></script>
-        <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/animejs@4.5.0/dist/bundles/anime.umd.min.js"></script>
-        <script src="js/site.js"></script>
+        <div class="detail" id="detail" hidden>
+            <button class="detail-backdrop" type="button" aria-label="Chiudi"></button>
+            <article class="detail-card" data-layout>
+                <button class="detail-close" type="button" aria-label="Chiudi dettaglio">×</button>
+                <p class="detail-kicker"></p>
+                <h3 class="detail-title"></h3>
+                <p class="detail-body"></p>
+                <div class="detail-tags"></div>
+                <a class="btn btn-primary detail-link" href="#" target="_blank" rel="noopener noreferrer">Apri progetto</a>
+            </article>
+        </div>
+
+        <script type="module" src="js/site.js"></script>
     </body>
 </html>
